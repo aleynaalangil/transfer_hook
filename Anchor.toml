@@ -6,10 +6,10 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-transfer_hook = "8ENJmtxr1HAxWhY8gXcBPggxbNc66BFjUuvWoTc48enB"
+transfer_hook = "7evqQb556TKMSHnKFLbsGQvTDceXNGGdS8yPDaBA4Hep"
 
 [programs.devnet]
-transfer_hook = "8ENJmtxr1HAxWhY8gXcBPggxbNc66BFjUuvWoTc48enB"
+transfer_hook = "7evqQb556TKMSHnKFLbsGQvTDceXNGGdS8yPDaBA4Hep"
 
 [registry]
 url = "https://api.apr.dev"

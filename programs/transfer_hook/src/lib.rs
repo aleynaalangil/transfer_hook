@@ -16,7 +16,7 @@ use spl_tlv_account_resolution::{
 };
 use spl_transfer_hook_interface::instruction::ExecuteInstruction;
 
-declare_id!("8ENJmtxr1HAxWhY8gXcBPggxbNc66BFjUuvWoTc48enB");
+declare_id!("7evqQb556TKMSHnKFLbsGQvTDceXNGGdS8yPDaBA4Hep");
 
 #[error_code]
 pub enum TransferError {
@@ -118,7 +118,7 @@ pub struct InitializeExtraAccountMetaList<'info> {
     pub extra_account_meta_list: AccountInfo<'info>,
     pub mint: InterfaceAccount<'info, Mint>,
     pub system_program: Program<'info, System>,
-    #[account(init_if_needed, seeds = [b"white_list"], bump, payer = payer, space = 400)]
+    #[account(init_if_needed, seeds = [b"white_list"], bump, payer = payer, space = 1024)]
     pub white_list: Account<'info, WhiteList>,
 }
 
