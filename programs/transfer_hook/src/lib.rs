@@ -50,24 +50,6 @@ pub mod transfer_hook {
         Ok(())
     }
 
-    // #[interface(spl_transfer_hook_interface::execute)]
-    // pub fn transfer_hook(ctx: Context<TransferHook>, _amount: u64) -> Result<()> {
-    //     // Fail this instruction if it is not called from within a transfer hook
-    //     check_is_transferring(&ctx)?;
-
-    //     if !ctx
-    //         .accounts
-    //         .white_list
-    //         .white_list
-    //         .contains(&ctx.accounts.destination_token.key())
-    //     {
-    //         panic!("Account not in white list!");
-    //     }
-
-    //     msg!("Account in white list, all good!");
-
-    //     Ok(())
-    // }
     #[interface(spl_transfer_hook_interface::execute)]
     pub fn transfer_hook(ctx: Context<TransferHook>, _amount: u64) -> Result<()> {
         // Fail this instruction if it is not called from within a transfer hook
@@ -134,27 +116,7 @@ pub mod transfer_hook {
 
         Ok(())
     }
-    // pub fn remove_from_whitelist(
-    //     ctx: Context<RemoveFromWhiteList>,
-    //     wallet_account: Pubkey,
-    // ) -> Result<()> {
-    //     if ctx.accounts.white_list.authority != ctx.accounts.signer.key() {
-    //         panic!("Only the authority can remove from the white list!");
-    //     }
-    
-    //     let token_account_key = ctx.accounts.account_to_remove.key();
-    //     let wl = &mut ctx.accounts.white_list.white_list;
-    
-    //     // Retain everything that does NOT match both the token & wallet
-    //     wl.retain(|entry| {
-    //         !(entry.token_account == token_account_key
-    //           && entry.wallet_account == wallet_account)
-    //     });
-    
-    //     msg!("Removed token={}, wallet={} from whitelist (if present).", token_account_key, wallet_account);
-    //     msg!("Whitelist length = {}", wl.len());
-    //     Ok(())
-    // }
+
     pub fn remove_from_whitelist(
         ctx: Context<RemoveFromWhiteList>,
         wallet_account: Pubkey, // controlling wallet
